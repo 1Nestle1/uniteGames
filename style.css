@@ -10,12 +10,14 @@
 .header{
 background: #00000097;
 backdrop-filter: blur(10px);
+box-shadow: 0px -5px 5px -5px rgba(153, 149, 149, 0.604) inset;
 
 }
 .shapkaxd{
     position: sticky;
     top: 0px;
     z-index:10 ;
+    box-shadow: 0px -5px 5px -5px rgb(220, 220, 220) inset;
     /* background: black; */
     
 }
@@ -308,9 +310,19 @@ z-index: 0;
 }
 
 .onetrap{
-    position: absolute;
+    /* position: absolute;
     left: calc(var(--i) * 145px);
+    z-index: var(--i); */
 
+}
+.onetrapBox{
+    position: relative;
+    left: calc(100px + var(--i) *10px );
+    transform: skewX(-30deg);
+    width: 130px;
+    height: 342px;
+    z-index: var(--i);
+    overflow: hidden;
 }
 .onetrap.toptext.fb{
     /* left: -200px; */
@@ -319,13 +331,41 @@ z-index: 0;
 .onetrap.smalltoptxt{
     top:120px;
     display: flex;
-    jus
+    z-index: 1;
 }
 .onetrap.toptxt{
     font-size: larger;
     font-weight: 900;
     width: 300px;
     display: flex;
+    z-index: 1 ;
+}
+.hoverArea .imga{
+    transform: skewX(30deg);
+    position: absolute;
+    right: -70%;
+    
+}
+.onetrapBox .hoverArea{
+    content: "";
+    display: block;
+    width: 130px;
+    height: 342px;
+    /* background: red; */
+    position: absolute;
+    z-index: 10000;
+    /* left: 90px; */
+    left: 0;
+    top: 0;
+    /* transform: skewX(-30deg); */
+    transform-origin: center;
+}
+.sb.image.tiles:has(.onetrapBox:hover) .onetrapBox{
+    filter: blur(5px);
+}
+.onetrapBox:hover{
+    /* transform: scale(1.1) skewX(-30deg); */
+    filter: none !important;
 }
 .card.sb{
     position: relative;
@@ -361,6 +401,7 @@ z-index: 0;
 .sb.image.tiles{
     left: 252px;
     position: absolute;
+    display: flex;
 }
 .sb.image.parts{
     position: absolute;
@@ -371,18 +412,266 @@ z-index: 0;
     position: absolute;
     left: 400px;
 }
-.sb.image.circle{
-    border-radius: 50%;
+.circle{
+    border-radius: 50%; 
     border-color: white;
     border-width: 10px;
     border: solid;
+    position: absolute; 
+    height: 124.2px; 
+    width: 124.2px;
+
+
+}
+.circle.dota{
+    border-width: 5px; 
+    top: 0;;
+    right: 50px;
+}
+.circle.cs{
+    border-width: 5px;
+    bottom: 0;
+    right: -50px;
+}
+.circle.Steam{
+    border-width: 5px; 
+    bottom: 0;
+    left: 20px;
+}
+.trgames{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    left: -150px;
+    bottom: -50px;
+}
+.card.tba{
+background-color: #1f1f4c;
+/* margin-top: 20px; */
+
+}
+.card.tba::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
     position: absolute;
-    right: 0px;
+
+    background: url('img/Vector\ 11.png');
 }
-.sb.image.circle.dota{
-    border-width: 10px; 
-    right: -200px; 
+.triangle{
+    height: 200px;
+    width: 300px;
+    top: 50px;
+    left: 29px;
+    position: absolute;
 }
-.sb.image.circle.cs{
-    border-width: 10px; 
+.cardsa.smallfr{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    /* gap: 50px; */
+}
+
+.cards.smallfr{
+
+}
+.fsect{
+    width: 100%;
+    padding: 50px 0px 50px;
+    color: azure;
+    /* p; */
+}
+.fisect{
+    color: azure;
+    gap: 20px;
+    display: grid;
+    margin-top: 20px;
+    
+}
+.card.smallfr{
+    position: relative;
+    border-radius: 20px;
+    text-align: center;
+    padding: 30px 5px;
+}
+.card.smallfr::after{
+    content: '';
+    /* box-shadow: 0px 10px 15px 1px rgba(255, 255, 255, 0.2) inset; */
+    background: linear-gradient(180deg, #393942 0%, rgba(57, 57, 66, 0.35) 100%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    z-index: 0  ;
+    ;
+
+}
+.card.smallfr::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1.01);
+    border-radius: 20PX;
+    background-color: #0404a3;
+    z-index: -1;
+    
+    /* background-color: blue  ; */
+
+    /* background-color: rgb(251, 251, 251); */
+}
+.smallfr.toptxt{
+    font-weight: bolder;
+    font-size: larger;
+    z-index: 2;
+    position: relative;
+}
+.smallfr.smalltoptext{
+    font-weight: lighter;
+    z-index: 3;
+    position: relative;
+}
+.smallfr{
+    font-size: large;
+}
+.rowsmall{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 23px;
+}
+.news{
+    color: azure;
+    text-align: center;
+}
+.cards.th{
+    background: #232229;
+    border-radius: 20px;
+    justify-content: center;
+    width: 310px;
+    position: relative;
+
+}
+.bottompartsm{
+    color: azure;
+    text-align: left;
+}
+.bottomtext.th{
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    align-items: end;
+    display: flex;
+
+
+
+}
+.title.th{
+    padding-left: 10px;
+}
+.bottomtext.th.fb{
+    padding-top: 65px;
+}
+.newsbtn{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+    font-size: larger
+}
+.ftrows{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: start;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 50px;
+    border-bottom: 2px solid;
+    border-bottom-color: #515160;
+    /* border-bottom-; */
+
+}
+.topftext{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;   
+    gap: 20px;
+}
+.fthead{
+    color: azure;
+}
+.ftlinks{
+    color: #ffffff81;
+    text-decoration: none;
+
+}
+.h{
+    color: azure;
+    font-size: medium;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.thebottom{
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 25px
+}
+.fimg{
+    /* pi; */
+}
+.netbook.b{
+    /* position: absolute;
+    top:200px ; */
+}
+.card.mini-card.grad{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(
+    135deg,
+    hsl(223deg 70% 37%) 0%,
+    hsl(230deg 65% 50%) 20%,
+    hsl(279deg 58% 44%) 40%,
+    hsl(322deg 100% 40%) 60%,
+    hsl(338deg 82% 48%) 80%,
+    hsl(305deg 20% 24%) 100%
+    
+  );
+  color: azure;
+}
+.card.mini-card.grad.sec{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(
+    135deg,
+    hsl(134deg 69% 75%) 0%,
+    hsl(140deg 46% 67%) 20%,
+    hsl(203deg 100% 42%) 40%,
+    hsl(279deg 60% 38%) 60%,
+    hsl(279deg 60% 39%) 80%,
+    hsl(321deg 71% 49%) 100%
+  );
+
+  color: azure;
+}
+.display.s{
+    position: absolute;
+    bottom: -500px;;
+}
+.toptextsection{
+    text-align: center;
+    color: azure;
+}
+.onetrap.imga:hover{
+    transform: scale(1.1);
+}
+.btn:hover{
+    filter: brightness(1.1);
 }
